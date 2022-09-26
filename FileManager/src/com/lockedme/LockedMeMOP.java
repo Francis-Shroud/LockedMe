@@ -1,5 +1,5 @@
 package com.lockedme;
-import java.io.File;
+import java.io.*;
 public class LockedMeMOP {
 	public void displayFilesInAscendingOrder(String directoryPath) {
 		try {
@@ -60,6 +60,7 @@ public class LockedMeMOP {
 			for (File fileEntry : files) {
 				if (fileEntry.getName().equals(fileName)) {
 					isExisted = true;
+					fileEntry.delete();
 					if (fileEntry.delete());
 					isDeleted = true;
 					System.out.println(fileEntry.getName());
@@ -86,7 +87,7 @@ public class LockedMeMOP {
 				}
 			}
 			if(isExisted) {
-				System.out.println("File is existed");
+				System.out.println("File exists");
 			}else {
 				System.out.println("File is Doesnot exists in the directory");
 			}
